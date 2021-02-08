@@ -64,3 +64,17 @@ c:\users\reharsh\documents\visual studio 2015\Projects\PallottiOnlineAddmission\
 c:\users\reharsh\documents\visual studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\obj\Debug\PallottiOnlineAddmission.csprojResolveAssemblyReference.cache
 c:\users\reharsh\documents\visual studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\obj\Debug\PallottiOnlineAddmission.dll
 c:\users\reharsh\documents\visual studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\obj\Debug\PallottiOnlineAddmission.pdb
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\MySql.Data.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\MySql.Web.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\Google.Protobuf.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\Zstandard.Net.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\BouncyCastle.Crypto.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\Ubiety.Dns.Core.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\Renci.SshNet.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\System.Buffers.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\K4os.Compression.LZ4.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\K4os.Hash.xxHash.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\MySql.Data.xml
+C:\Users\Reharsh\Documents\Visual Studio 2015\Projects\PallottiOnlineAddmission\PallottiOnlineAddmission\bin\MySql.Web.xml

@@ -4,8 +4,7 @@
 
 
 
-    <body>
-
+   
         <!--START SCROLL TOP BUTTON -->
         <a class="scrollToTop" href="#">
             <i class="fa fa-angle-up"></i>
@@ -300,10 +299,7 @@
 
                 </div>
             </div>
-            </div>
-        </div>
-      </div>
-    </div>
+        
         </section>
 
 
