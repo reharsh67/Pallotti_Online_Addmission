@@ -550,7 +550,7 @@
                                             <h4><a href="#">Know more about admission?</a></h4>
                                             <p>Click below to know more about the institute And Achievements!</p>
                                             <div class="mu-latest-course-single-contbottom">
-                                                <a class="mu-course-details" href="https://forms.gle/AmQmYswE84rQUweu9">Click Here</a>
+                                                <a class="mu-course-details" href="/Inquiry.aspx">Click Here</a>
 
                                             </div>
                                         </div>
