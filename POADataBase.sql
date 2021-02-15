@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2021 at 02:50 PM
+-- Generation Time: Feb 15, 2021 at 06:54 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `onlineaddmission`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_student_counselling`
+--
+
+CREATE TABLE `tbl_student_counselling` (
+  `r_id` int(25) NOT NULL,
+  `r_email` varchar(40) NOT NULL,
+  `r_year` varchar(25) NOT NULL,
+  `r_date` varchar(25) NOT NULL,
+  `r_slot` varchar(50) NOT NULL,
+  `r_mode` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -75,6 +90,12 @@ CREATE TABLE `tbl_student_queries` (
 --
 
 --
+-- Indexes for table `tbl_student_counselling`
+--
+ALTER TABLE `tbl_student_counselling`
+  ADD PRIMARY KEY (`r_id`);
+
+--
 -- Indexes for table `tbl_student_family_details`
 --
 ALTER TABLE `tbl_student_family_details`
@@ -97,6 +118,12 @@ ALTER TABLE `tbl_student_queries`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tbl_student_counselling`
+--
+ALTER TABLE `tbl_student_counselling`
+  MODIFY `r_id` int(25) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_student_personal_details`
