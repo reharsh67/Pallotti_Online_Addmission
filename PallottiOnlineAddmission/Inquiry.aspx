@@ -7,7 +7,55 @@
     <i class="fa fa-angle-up"></i>
 </a>
 <!-- END SCROLL TOP BUTTON -->
+<script>     function ValidateModuleList(source, args) {
 
+         var chkListModules = document.getElementById('<%= CheckBoxList1.ClientID %>');
+
+         var chkListinputs = chkListModules.getElementsByTagName("input");
+
+         for (var i = 0; i < chkListinputs.length; i++) {
+
+             if (chkListinputs[i].checked) {
+
+                 args.IsValid = true;
+
+                 return;
+
+             }
+         }
+         args.IsValid = false;
+     }
+     function verifyAnswer() {
+        
+         var mylist = document.getElementById("myAns");
+         var result = mylist.options[mylist.selectedIndex].text;
+         if (result == 'No') {
+         
+             document.getElementById("year_con_0").disabled = true;
+             document.getElementById("year_con_1").disabled = true;
+             document.getElementById("year_con_2").disabled = true;
+             document.getElementById("txtSelectDate").disabled = true;
+             document.getElementById("CheckBoxList1_0").disabled = true;
+             document.getElementById("CheckBoxList1_1").disabled = true;
+             document.getElementById("CheckBoxList1_2").disabled = true;
+             document.getElementById("CheckBoxList1_3").disabled = true;
+             document.getElementById("mode_list_0").disabled = true;
+             document.getElementById("mode_list_1").disabled = true;
+         } else {
+            
+             document.getElementById("year_con_0").disabled = false;
+             document.getElementById("year_con_1").disabled = false;
+             document.getElementById("year_con_2").disabled = false;
+             document.getElementById("txtSelectDate").disabled = false;
+             document.getElementById("CheckBoxList1_0").disabled = false;
+             document.getElementById("CheckBoxList1_1").disabled = false;
+             document.getElementById("CheckBoxList1_2").disabled = false;
+             document.getElementById("CheckBoxList1_3").disabled = false;
+             document.getElementById("mode_list_0").disabled = false;
+             document.getElementById("mode_list_1").disabled = false;
+         }
+     }
+</script>
 <!-- Start header  -->
 <header id="mu-header">
     <div class="container">
@@ -185,55 +233,62 @@
                                         <br />
                                         <label>Do you want to book Counselling Session ? </label>
                                         <br />
-                                        <asp:RadioButton ID="RadioButton1" class="form-control" runat="server"  Text="Yes" GroupName="cons" />
-                                        <br />
-                                        <asp:RadioButton ID="RadioButton2" class="form-control" runat="server"  Text="No" GroupName="cons" />
-                                        <br />
+                                        <asp:DropDownList required="required" DataValueField="FieldName" class="form-control" onchange="verifyAnswer()" ID="myAns" runat="server">
+                                            <asp:ListItem Value='choose'>Please Select</asp:ListItem>
+                                            <asp:ListItem Value='yes'>Yes</asp:ListItem>
+                                            <asp:ListItem Value='no'>No</asp:ListItem>
+                                        </asp:DropDownList>
+
                                         <br />
 
                                         <label>Counseling Required for <span class="required"><b>*</b></span> </label>
                                         <br />
                                         <asp:RadioButtonList ID="year_con" runat="server" RepeatLayout="Flow">
-                                        <asp:ListItem ID="RadioButton3" runat="server" class="form-control" Text="⠀⠀BE 1st Year" GroupName="year" />
-                                        
+                                            <asp:ListItem ID="RadioButton3" runat="server" class="form-control" Text="⠀⠀BE 1st Year" GroupName="year" />
 
-                                        <asp:ListItem ID="RadioButton4" runat="server" class="form-control" Text="⠀⠀Direct Second Year BE" GroupName="year" />
-                                       
 
-                                        <asp:ListItem ID="RadioButton5" runat="server" class="form-control" Text="⠀⠀M.Tech" GroupName="year" />
-                                        
-                                            </asp:RadioButtonList>
+                                            <asp:ListItem ID="RadioButton4" runat="server" class="form-control" Text="⠀⠀Direct Second Year BE" GroupName="year" />
+
+
+                                            <asp:ListItem ID="RadioButton5" runat="server" class="form-control" Text="⠀⠀M.Tech" GroupName="year" />
+
+                                        </asp:RadioButtonList>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ErrorMessage="Please select year of addmission.<br />" ControlToValidate="year_con" runat="server" ForeColor="Red" Display="Dynamic" />
                                         <br />
-                                            <br />
-                                       
+                                        <br />
+
                                         <label>Select Date for Counseling <span class="required"><b>*</b></span> </label>
                                         <asp:TextBox ID="txtSelectDate" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ErrorMessage="Please select year of addmission.<br />" ControlToValidate="txtSelectDate" runat="server" ForeColor="Red" Display="Dynamic" />
                                         <br />
                                         <br />
                                         <label>Select the Slots <span class="required"><b>*</b></span> </label>
                                         <br />
                                         <p>Please select all that apply</p>
-                                        <br />
-                                        <p>⠀⠀⠀  ⠀⠀⠀      Morning⠀⠀⠀⠀Midday⠀⠀⠀⠀Afternoon⠀⠀⠀⠀Evening ⠀⠀</p>
-                                        <br />
-                                        <p >
-                                            Slot⠀⠀⠀⠀⠀⠀
-                                            <asp:CheckBox ID="CheckBox1" runat="server" Text="" />⠀⠀⠀⠀⠀⠀⠀⠀
-                                        <asp:CheckBox ID="CheckBox2" runat="server" Text="" />⠀⠀⠀⠀⠀⠀⠀⠀  
-                                        <asp:CheckBox ID="CheckBox3" runat="server" Text="" />
-                                            ⠀⠀⠀⠀⠀⠀ ⠀⠀
-                                        <asp:CheckBox ID="CheckBox4" runat="server" Text="" />
+
+                                        <p>
+
+                                            <asp:CheckBoxList ID="CheckBoxList1" runat="server" ClientIDMode="Static">
+                                                <asp:ListItem Text="⠀ Morning" Value="1" />
+                                                <asp:ListItem Text="⠀ Midday" Value="2" />
+                                                <asp:ListItem Text="⠀ Afternoon" Value="3" />
+                                                <asp:ListItem Text="⠀ Evening" Value="4" />
+                                            </asp:CheckBoxList>
+                                            <asp:CustomValidator runat="server" ID="cvmodulelist" ClientValidationFunction="ValidateModuleList" Display="Dynamic" ErrorMessage="Please select Slot.<br/>" ForeColor="Red">
+                                            </asp:CustomValidator>
                                         </p>
+
                                         <br />
-                                        
+
                                         <label>Preferred Mode  <span class="required"><b>*</b></span> </label>
                                         <br />
-                                        <asp:RadioButtonList ID="mode_list" runat="server" RepeatLayout="Flow">
-                                        
+                                        <asp:RadioButtonList ID="mode_list" required runat="server" RepeatLayout="Flow">
+
                                             <asp:ListItem ID="ListItem1" runat="server" class="form-control" Text="⠀⠀Online Meeting with Counselor" GroupName="mode" />
-                                        
-                                        <asp:ListItem ID="listitem2" runat="server" class="form-control" Text="⠀⠀Physical Visit to the Institute" GroupName="mode" />
-                                              </asp:RadioButtonList>
+
+                                            <asp:ListItem ID="listitem2" runat="server" class="form-control" Text="⠀⠀Physical Visit to the Institute" GroupName="mode" />
+                                        </asp:RadioButtonList>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="Please select Mode.<br />" ControlToValidate="mode_list" runat="server" ForeColor="Red" Display="Dynamic" />
                                         <br />
 
                                     </div>

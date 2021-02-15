@@ -65,17 +65,17 @@ namespace PallottiOnlineAddmission
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Record Saved Sucessfully');window.location='Inquiry.aspx';", true);
                     con.Close();
                     cmd2.Dispose();
-                    if(RadioButton1.Checked)
+                    if(myAns.SelectedIndex==1)
                     {
                         String slot = "";
-                        if(CheckBox1.Checked)
+                        if(CheckBoxList1.Items[0].Selected)
                         {
                             slot = slot + "Morning";
-                            if (CheckBox2.Checked)
+                            if (CheckBoxList1.Items[1].Selected)
                                 slot = slot + " Midday";
-                            if (CheckBox3.Checked)
+                            if (CheckBoxList1.Items[2].Selected)
                                 slot = slot + " Afternoon";
-                            if (CheckBox4.Checked)
+                            if (CheckBoxList1.Items[3].Selected)
                                 slot = slot + " Evening";
                         }
                         MySqlCommand cmd3 = new MySqlCommand(query3, con);
