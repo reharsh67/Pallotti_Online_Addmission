@@ -883,93 +883,104 @@
         <!-- End from blog -->
 
         <!-- Start footer -->
-        <footer id="mu-footer">
-            <!-- start footer top -->
-            <div class="mu-footer-top">
-                <div class="container">
-                    <div class="mu-footer-top-area">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="mu-footer-widget">
-                                    <h4>Quick Links </h4>
-                                    <ul>
-                                        <li>
-                                            <a href="/pages/nirf">NIRF</a>
-                                        </li>
-                                        <li>
-                                            <a href="/pages/naac-ssr">NAAC SSR</a>
-                                        </li>
-                                        <li>
-                                            <a href="/pages/aqar">AQAR</a>
-                                        </li>
-                                        <li>
-                                            <a href="/galleries/list">Gallery</a>
-                                        </li>
-                                        <li>
-                                            <a href="/pages/code-of-ethics">Code of Ethics</a>
-                                        </li>
-                                        <li><a href="/hostel">Hostel</a></li>
-                                        <li>
-                                            <a href="/pages/iqac">IQAC</a>
-                                        </li>
+       <footer id="mu-footer">
+        <!-- start footer top -->
+        <div class="mu-footer-top">
+            <div class="container">
+                <div class="mu-footer-top-area">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="mu-footer-widget">
+                                <h4>Quick Links </h4>
+                                <ul>
+                                    <li>
+                                        <a href="/pages/nirf">NIRF</a>
+                                    </li>
+                                    <li>
+                                        <a href="/pages/naac-ssr">NAAC SSR</a>
+                                    </li>
+                                    <li>
+                                        <a href="/pages/aqar">AQAR</a>
+                                    </li>
+                                    <li>
+                                        <a href="/galleries/list">Gallery</a>
+                                    </li>
+                                   
+                                   
 
-                                    </ul>
-                                </div>
+                                </ul>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="mu-footer-widget">
-                                    <h4></h4>
-                                    <ul>
-                                        <li>
-                                            <a href="/pages/naac-grade">NAAC</a>                    </li>
-                                        <li>
-                                            <a href="/pages/mandatory-disclosures">Mandatory Disclosure</a>
-                                        </li>
-                                        <li>
-                                            <a href="/pages/feedback">Feedback</a>
-                                        </li>
-                                        <li>
-                                            <a href="/pages/professional-code-of-conduct">Professional Code Of Conduct</a>                    </li>
-                                        <li>
-                                            <a href="/pages/syllabus">Syllabus</a>
-                                        </li>
-                                        <li><a href="http://epay.stvincentngp.edu.in/" target="_blank">E-Pay Portal(MISC)</a></li>
-
-
-
-                                        <li>
-                                            <a href="/pages/clean-campus">Clean campus</a>
-                                    </ul>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="mu-footer-widget">
-                                    <h4>Contact</h4>
-                                    <address>
-                                        <p>St. Vincent Pallotti College of Engineering & Technology Gavsi Manapur, Wardha Road, Nagpur, Maharashtra India, - Pin : 441108</p>
-                                    </address>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
-
-                </div>
-                <!-- end footer top -->
-                </div>
-                <!-- start footer bottom -->
-              
-                <div class="mu-footer-bottom">
-                    <div class="container">
-                        <div class="mu-footer-bottom-area">
-                            <p>&copy; All Right Reserved. Designed by CE Department</a></p>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="mu-footer-widget">
+                                <h4></h4>
+                                <ul>
+                                    <li>
+                                        <a href="/pages/naac-grade">NAAC</a>                    </li>
+                                    <li>
+                                        <a href="/pages/mandatory-disclosures">Mandatory Disclosure</a>
+                                    </li>
+                                    <li>
+                                        <a href="/pages/feedback">Feedback</a>
+                                    </li>
+                                   <li>
+                                        <a href="/pages/clean-campus">Clean campus</a></li>
+                                    <li>
+                                        <a href="/pages/code-of-ethics">Code of Ethics</a>
+                                    </li>
+                                </ul>
+                                 
+                            </div>
                         </div>
+                         <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="mu-footer-widget">
+                                <h4></h4>
+                                <ul>
+                                    <li><a href="/hostel">Hostel</a></li>
+                                    <li>
+                                        <a href="/pages/iqac">IQAC</a>
+                                    </li>
+                                     <li>
+                                        <a href="/pages/professional-code-of-conduct">Professional Code Of Conduct</a>                    </li>
+                                    <li>
+                                        <a href="/pages/syllabus">Syllabus</a>
+                                    </li>
+                                    <li><a href="http://epay.stvincentngp.edu.in/" target="_blank">E-Pay Portal(MISC)</a></li>
+
+
+
+                                    
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="mu-footer-widget">
+                                <h4>Contact</h4>
+                                <address>
+                                    <p>St. Vincent Pallotti College of Engineering & Technology Gavsi Manapur, Wardha Road, Nagpur, Maharashtra India, - Pin : 441108</p>
+                                </address>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <!-- end footer bottom -->
-        </footer>
+
+            </div>
+            <!-- end footer top -->
+        </div>
+        <!-- start footer bottom -->
+
+        <div class="mu-footer-bottom">
+            <div class="container">
+                <div class="mu-footer-bottom-area">
+                    <p>&copy; All Right Reserved. Designed by CE Department</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- end footer bottom -->
+    </footer>
         <!-- End footer -->
 
         <!-- jQuery library -->

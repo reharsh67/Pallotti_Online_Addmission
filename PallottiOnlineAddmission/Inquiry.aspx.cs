@@ -70,15 +70,13 @@ namespace PallottiOnlineAddmission
                     {
                         String slot = "";
                         if(CheckBoxList1.Items[0].Selected)
-                        {
-                            slot = slot + "Morning";
-                            if (CheckBoxList1.Items[1].Selected)
-                                slot = slot + " Midday";
-                            if (CheckBoxList1.Items[2].Selected)
-                                slot = slot + " Afternoon";
-                            if (CheckBoxList1.Items[3].Selected)
-                                slot = slot + " Evening";
-                        }
+                             slot = slot + "Morning";
+                        if (CheckBoxList1.Items[1].Selected)
+                            slot = slot + " Midday";
+                        if (CheckBoxList1.Items[2].Selected)
+                            slot = slot + " Afternoon";
+                        if (CheckBoxList1.Items[3].Selected)
+                            slot = slot + " Evening";
                         MySqlCommand cmd3 = new MySqlCommand(query3, con);
                         cmd3.Connection = con;
                         con.Open();

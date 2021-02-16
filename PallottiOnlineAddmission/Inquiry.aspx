@@ -63,6 +63,22 @@
           ValidatorEnable(document.getElementById("RequiredFieldValidator3"), true);
       }
   }
+  window.onscroll = function () { myFunction() };
+
+  // Get the header
+  var header = document.getElementById("myHeader");
+
+  // Get the offset position of the navbar
+  var sticky = header.offsetTop;
+
+  // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+      if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+      } else {
+          header.classList.remove("sticky");
+      }
+  }
 </script>
 
 <!-- Start header  -->
@@ -196,7 +212,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-8 col-sm-8 col-xs-17 col-md-offset-3">
+                    <div class="col-md-8 col-sm-8 col-xs-17 col-md-offset-2">
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 Admission Inquiry 2021-22
@@ -204,6 +220,11 @@
                             <div class="panel-body">
                                 <form id="form2" runat="server" role="form" method="post">
                                     <div class="form-group ">
+                                        <label>Already Filled this form <a href="/ViewResp.aspx"><span class="required">Click here </span></a> to view Response!</label>
+
+                                        <br />
+
+                                <br />
                                         <label>Your Full Name <span class="required"><b>*</b></span></label>
                                         <asp:TextBox ID="UserName" DataValueField="fname" class="form-control" runat="server" required ToolTip="Enter Your Name"></asp:TextBox>
                                         <br />
@@ -245,12 +266,13 @@
                                         <label>Do you want to book Counselling Session ? </label>
                                         <br />
 
-                                        <asp:DropDownList DataValueField="FieldName" class="form-control" onchange="verifyAnswer()" ID="myAns" runat="server">
+                                        <asp:DropDownList DataValueField="FieldName" class="form-control" onchange="verifyAnswer()" ID="myAns" runat="server"  onclick="ToggleValidator(this);" ClientIDMode="Static">
                                             <asp:ListItem Value="0">Please Select</asp:ListItem>
                                             <asp:ListItem Value="1">Yes</asp:ListItem>
                                             <asp:ListItem Value="2">No</asp:ListItem>
                                         </asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ErrorMessage="Please select Yes or No.<br />" ControlToValidate="myAns" runat="server" ForeColor="Red" Display="Dynamic" />
+                                        <asp:CustomValidator runat="server" ID="CustomValidator1" ClientValidationFunction="ValidateModuleList" Display="Dynamic" ErrorMessage="Please select Yes or  NO.<br/>" ForeColor="Red">
+                                            </asp:CustomValidator>
                                         <br />
 
                                         <label>Counseling Required for <span class="required"><b>*</b></span> </label>
@@ -266,7 +288,7 @@
                                         <br />
 
                                         <label>Select Date for Counseling <span class="required"><b>*</b></span> </label>
-                                        <asp:TextBox ID="txtSelectDate" runat="server" class="form-control" TextMode="Date" onclick="ToggleValidator(this);"></asp:TextBox>
+                                        <asp:TextBox ID="txtSelectDate" class="form-control" runat="server" TextMode="Date" onclick="ToggleValidator(this);"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ErrorMessage="Please select Date.<br />" ControlToValidate="txtSelectDate" runat="server" ForeColor="Red" Display="Dynamic" />
                                         <br />
                                         <br />
@@ -275,7 +297,7 @@
                                         <br />
                                         <p>Please select all that apply</p>
                                         <p>
-                                            <asp:CheckBoxList ID="CheckBoxList1" runat="server" onclick="ToggleValidator(this);" ClientIDMode="Static">
+                                            <asp:CheckBoxList ID="CheckBoxList1"  runat="server" onclick="ToggleValidator(this);" ClientIDMode="Static">
                                                 <asp:ListItem Text="⠀ Morning" Value="1" />
                                                 <asp:ListItem Text="⠀ Midday" Value="2" />
                                                 <asp:ListItem Text="⠀ Afternoon" Value="3" />
@@ -288,7 +310,7 @@
 
                                         <label>Preferred Mode  <span class="required"><b>*</b></span> </label>
                                         <br />
-                                        <asp:RadioButtonList ID="mode_list" onclick="ToggleValidator(this);" required runat="server" RepeatLayout="Flow">
+                                        <asp:RadioButtonList ID="mode_list"  onclick="ToggleValidator(this);" required runat="server" RepeatLayout="Flow">
                                             <asp:ListItem ID="ListItem1" runat="server" class="form-control" Text="⠀⠀Online Meeting with Counselor" GroupName="mode" />
                                             <asp:ListItem ID="listitem2" runat="server" class="form-control" Text="⠀⠀Physical Visit to the Institute" GroupName="mode" />
                                         </asp:RadioButtonList>
@@ -296,7 +318,7 @@
                                         <br />
                                     </div>
                                     <center>
-                                         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" class=" mu-post-btn"   Text="Submit" >   </asp:Button>
+                                         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" class=" mu-post-btn form-control"   Text="Submit" >   </asp:Button>
                                    </center>
                                 </form>
                             </div>
@@ -306,6 +328,7 @@
             </div>
         </div>
     </section>
+
 
     <script src="assets/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -345,13 +368,8 @@
                                     <li>
                                         <a href="/galleries/list">Gallery</a>
                                     </li>
-                                    <li>
-                                        <a href="/pages/code-of-ethics">Code of Ethics</a>
-                                    </li>
-                                    <li><a href="/hostel">Hostel</a></li>
-                                    <li>
-                                        <a href="/pages/iqac">IQAC</a>
-                                    </li>
+                                   
+                                   
 
                                 </ul>
                             </div>
@@ -368,7 +386,24 @@
                                     <li>
                                         <a href="/pages/feedback">Feedback</a>
                                     </li>
+                                   <li>
+                                        <a href="/pages/clean-campus">Clean campus</a></li>
                                     <li>
+                                        <a href="/pages/code-of-ethics">Code of Ethics</a>
+                                    </li>
+                                </ul>
+                                 
+                            </div>
+                        </div>
+                         <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="mu-footer-widget">
+                                <h4></h4>
+                                <ul>
+                                    <li><a href="/hostel">Hostel</a></li>
+                                    <li>
+                                        <a href="/pages/iqac">IQAC</a>
+                                    </li>
+                                     <li>
                                         <a href="/pages/professional-code-of-conduct">Professional Code Of Conduct</a>                    </li>
                                     <li>
                                         <a href="/pages/syllabus">Syllabus</a>
@@ -377,8 +412,7 @@
 
 
 
-                                    <li>
-                                        <a href="/pages/clean-campus">Clean campus</a>
+                                    
                                 </ul>
                             </div>
                         </div>

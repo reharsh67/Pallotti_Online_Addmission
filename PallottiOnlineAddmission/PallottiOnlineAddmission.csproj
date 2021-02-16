@@ -219,6 +219,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="ViewResp.aspx" />
+    <Content Include="ViewRespDeails.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -391,6 +393,20 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewResp.aspx.cs">
+      <DependentUpon>ViewResp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewResp.aspx.designer.cs">
+      <DependentUpon>ViewResp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewRespDeails.aspx.cs">
+      <DependentUpon>ViewRespDeails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewRespDeails.aspx.designer.cs">
+      <DependentUpon>ViewRespDeails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
