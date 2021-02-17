@@ -172,6 +172,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AskQueAgain.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -219,6 +220,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="StudLogin.aspx" />
     <Content Include="ViewResp.aspx" />
     <Content Include="ViewRespDeails.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -352,6 +354,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="AskQueAgain.aspx.cs">
+      <DependentUpon>AskQueAgain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AskQueAgain.aspx.designer.cs">
+      <DependentUpon>AskQueAgain.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -393,6 +402,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="StudLogin.aspx.cs">
+      <DependentUpon>StudLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudLogin.aspx.designer.cs">
+      <DependentUpon>StudLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewResp.aspx.cs">
       <DependentUpon>ViewResp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

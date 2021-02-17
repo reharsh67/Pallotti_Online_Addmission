@@ -1,13 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewResp.aspx.cs" Inherits="PallottiOnlineAddmission.ViewResp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudLogin.aspx.cs" Inherits="PallottiOnlineAddmission.StudLogin" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!--START SCROLL TOP BUTTON -->
 <a class="scrollToTop" href="#">
-    <i class="fa fa-angle-up"></i>
+    <id class="fa fa-angle-up"></id>
 </a>
 <!-- END SCROLL TOP BUTTON -->
-
+<script type="text/javascript">
+    function ShowPopup(title, body) {
+        $("#MyPopup .modal-title").html(title);
+        $("#MyPopup .modal-body").html(body);
+        $("#MyPopup").modal("show");
+    }
+</script>
 
 <!-- Start header  -->
 <header id="mu-header">
@@ -142,43 +148,65 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-8 col-sm-8 col-xs-19 col-md-offset-2">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                Enter Email-Id to view Previous Interactions!
+                                Student Login
                             </div>
                             <div class="panel-body">
-                                <br />
-                                <form id="form2" runat="server" role="form" method="post">
-                                    <div class="form-group ">
-                                        <label>Want to post a new Query or book a counselling session  <a href="/AskQueAgain"><span class="required">Click here </span></a>To fil the form</label>
+                                <form role="form" runat="server" method="post">
 
+                                    <div class="form-group">
+
+                                        <label>First time visitiors first create a password <a href="/CreatePassword.aspx"><span class="required">Click here </span></a>.</label>
+                                        <br />
                                         <br />
 
-                                        <br />
+                                        <label>Enter email-id</label>
+                                        <input class="form-control" type="text" name="username" autocomplete="on" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input class="form-control" type="password" name="password" autocomplete="off" required />
+                                    </div>
 
-                                        <label>Email  <span class="required"><b>*</b></span></label>
-                                        <asp:TextBox ID="EMAIL" class="form-control" DataValueField="EmailId" runat="server" required ToolTip="Enter Email"></asp:TextBox>
-                                        <br />
 
-
-
-                                        <center>
-                                         <asp:Button ID="Button1" runat="server"  class=" mu-post-btn form-control" OnClick="btnsend_Click"  Text="Submit" >   </asp:Button>
+                                    <center>
+                                         <asp:Button ID="Button1" runat="server"  class=" mu-post-btn "   Text="Login" >   </asp:Button>
                                    </center>
+                                    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+                                    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+                                    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'  media="screen" />
+                                    <!-- Bootstrap -->
+                                    <!-- Modal Popup -->
+                                    <div id="MyPopup" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">
+                                                        &times;</button>
+                                                    <h4 class="modal-title"></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                                        Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
-                                <br />
-                                <br />
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
+
 
     <br />
     <br />
@@ -289,7 +317,7 @@
         </div>
         <!-- start footer bottom -->
 
-        <div class="mu-footer-bottom footer">
+        <div class="mu-footer-bottom ">
             <div class="container">
                 <div class="mu-footer-bottom-area">
                     <p>&copy; All Right Reserved. Designed by CE Department</a></p>

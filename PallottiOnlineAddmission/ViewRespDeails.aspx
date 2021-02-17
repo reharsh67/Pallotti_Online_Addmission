@@ -144,6 +144,9 @@
         .rounded_corners table table td {
             border-style: none;
         }
+        .required {
+            color: red;
+        }
 </style>
 
 <body>
@@ -157,7 +160,9 @@
         <center>
         <hr />
             <br />
-            <br />
+            
+                    <label>Want to post a new Query or book a counselling session  <a href="/AskQueAgain"><span class="required">Click here </span></a>To fil the form</label>
+            <br /><br />
         <div class="rounded_corners" style="width: 1500px">
             <asp:GridView ID="GridView2" runat="server"  HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White" RowStyle-BackColor="#A1DCF2" AlternatingRowStyle-BackColor="White" RowStyle-ForeColor="#3A3A3A" AutoGenerateColumns="false" AllowPaging="true" PageSize="10" OnPageIndexChanging="OnPageIndexChanging">
                 <Columns>
@@ -169,13 +174,26 @@
                 </Columns>
             </asp:GridView>
         </div>
+            <br />
+            <br />
         </center>
 
 
     </form>
 
-
-
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <br />
     <br />
     <script src="assets/js/jquery.min.js"></script>
@@ -195,31 +213,17 @@
     <script src="assets/js/custom.js"></script>
     <!-- Start footer -->
     <style>
-       
-
-        #footer1 {
+        .footer {
             position: fixed;
             width: 100%;
             bottom: 0;
             left: 0;
-            height: 250px;
+            height: 75px;
             background: #222;
             color: white;
-            padding: 0px 0px 8px 0px;
-        }
-
-      
-
-        /* added: */
-       
-
-        .upperFooter, .lowerFooter {
-            padding: 10px;
-            margin: 0;
         }
     </style>
     <footer id="mu-footer">
-        <div id="footer1">
         <!-- start footer top -->
         <div class="mu-footer-top ">
             <div class="container ">
@@ -256,16 +260,16 @@
                                     <li>
                                         <a href="/pages/feedback">Feedback</a>
                                     </li>
-                                   <li>
+                                    <li>
                                         <a href="/pages/clean-campus">Clean campus</a></li>
-                                     <li>
+                                    <li>
                                         <a href="/pages/code-of-ethics">Code of Ethics</a>
                                     </li>
                                 </ul>
-                                
+
                             </div>
                         </div>
-                         <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
                             <div class="mu-footer-widget">
                                 <h4></h4>
                                 <ul>
@@ -273,7 +277,7 @@
                                     <li>
                                         <a href="/pages/iqac">IQAC</a>
                                     </li>
-                                     <li>
+                                    <li>
                                         <a href="/pages/professional-code-of-conduct">Professional Code Of Conduct</a>                    </li>
                                     <li>
                                         <a href="/pages/syllabus">Syllabus</a>
@@ -290,23 +294,24 @@
                                 </address>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
-                <br />
-                <hr />
-                <center>
-                 <p>&copy; All Right Reserved. Designed by CE Department</p></center>
-                </div>
-            
+
             </div>
             <!-- end footer top -->
         </div>
         <!-- start footer bottom -->
 
-      
+        <div class="mu-footer-bottom footer">
+            <div class="container">
+                <div class="mu-footer-bottom-area">
+                    <p>&copy; All Right Reserved. Designed by CE Department</a></p>
+                </div>
+            </div>
+        </div>
         <!-- end footer bottom -->
     </footer>
-            </body>        
-               
+</body>
+
 </html>

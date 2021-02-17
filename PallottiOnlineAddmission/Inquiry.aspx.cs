@@ -22,7 +22,7 @@ namespace PallottiOnlineAddmission
         {
             object obj;
             const string strcon = "server=localhost;database=onlineaddmission;user id=root";
-            String query = "insert into `tbl_student_personal_details` (r_phno,r_fullname,r_email,r_state,r_city)  values (@r_phno,@r_fullname,@r_email,@r_state,@r_city ) ";
+            String query = "insert into `tbl_student_personal_details` (r_uid,r_phno,r_fullname,r_email,r_state,r_city)  values (@r_uid,@r_phno,@r_fullname,@r_email,@r_state,@r_city ) ";
             String query1 = "select COUNT(*) from tbl_student_personal_details where r_email=@r_email or r_phno=@r_phno", query2 = "insert into tbl_student_queries (r_email,r_query,r_time_posted) values (@r_email,@r_query,@r_time_posted)";
             String query3 = "insert into tbl_student_counselling (r_email,r_year,r_date,r_slot,r_mode) values (@r_email,@r_year,@r_date,@r_slot,@r_mode) ";
             DateTimeOffset now = (DateTimeOffset)DateTime.UtcNow;
@@ -38,12 +38,20 @@ namespace PallottiOnlineAddmission
                obj = cmd.ExecuteScalar();
                if (Convert.ToInt32(obj) != 0)
                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Email or Phone Number already detected in database ! Please try again .');window.location='Inquiry.aspx';", true); 
-               }
+
+                    string myMsg = "Duplicate email or phone number detected", myTitle = "Server Says";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "ShowPopup('" + myMsg + "', '" + myTitle + "');", true);
+                }
                else
                {
                     con.Close();
                     cmd.Dispose();
+                    MySqlCommand cmd4 = new MySqlCommand("select count(*) from tbl_student_personal_details", con);
+                    cmd4.Connection = con;
+                    con.Open();
+                    int count = Convert.ToInt16(cmd4.ExecuteScalar()) + 1;
+                    string uid = "UID00" + count;
+                    con.Close();
                     MySqlCommand cmd1 = new MySqlCommand(query,con);
                     cmd1.Connection = con;
                     con.Open();
@@ -52,6 +60,7 @@ namespace PallottiOnlineAddmission
                     cmd1.Parameters.AddWithValue("@r_email", EMAIL.Text);
                     cmd1.Parameters.AddWithValue("@r_state", statebox.Text);
                     cmd1.Parameters.AddWithValue("@r_city", city.Text);
+                    cmd1.Parameters.AddWithValue("@r_uid", uid);
                     cmd1.ExecuteNonQuery();
                     cmd1.Dispose();
                     con.Close();
@@ -63,7 +72,12 @@ namespace PallottiOnlineAddmission
                     cmd2.Parameters.AddWithValue("@r_time_posted", now.ToString());
                     cmd2.Parameters.AddWithValue("@r_email", EMAIL.Text);
                     cmd2.ExecuteNonQuery();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Record Saved Sucessfully');window.location='Inquiry.aspx';", true);
+                    con.Close();
+                    
+
+                    string myMsg = "Data save sucess ! Please note this Id for further references " + uid , myTitle = "Server Says";
+                    ClientScript.RegisterStartupScript(this.GetType(), "Popup", "ShowPopup('" + myMsg + "', '" + myTitle + "');", true);
+                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Record Saved Sucessfully');window.location='Inquiry.aspx';", true);
                     con.Close();
                     cmd2.Dispose();
                     if(myAns.SelectedIndex==1)
@@ -86,7 +100,8 @@ namespace PallottiOnlineAddmission
                         cmd3.Parameters.AddWithValue("@r_mode", mode_list.SelectedItem.Value.ToString());
                         cmd3.Parameters.AddWithValue("@r_date", txtSelectDate.Text);
                         cmd3.ExecuteNonQuery();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Slot Booked');window.location='Inquiry.aspx';", true);
+                        myMsg = "Slot Booked"; myTitle = "Server Says";
+                        ClientScript.RegisterStartupScript(this.GetType(), "Popup", "ShowPopup('" + myMsg + "', '" + myTitle + "');", true);
                         con.Close();
                         cmd3.Dispose();
                     }
