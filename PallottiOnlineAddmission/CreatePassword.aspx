@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudLogin.aspx.cs" Inherits="PallottiOnlineAddmission.StudLogin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreatePassword.aspx.cs" Inherits="PallottiOnlineAddmission.CreatePassword" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -158,21 +158,23 @@
 
                                     <div class="form-group">
 
-                                        <label>First time visitiors first create a password <a href="/CreatePassword.aspx"><span class="required">Click here </span></a>.</label>
+                                       
                                         <br />
                                         <br />
 
                                         <label>Enter U-Id Genrated while filling Inquriy Form</label>
+                                        <asp:TextBox ID="uid" class="form-control" DataValueField="question" required runat="server" ></asp:TextBox>
+                                   <label>Enter Email</label>
                                         <asp:TextBox ID="EMAIL" class="form-control" DataValueField="question" required runat="server" ></asp:TextBox>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
+                                        <label>Enter Password</label>
+                                        <asp:TextBox ID="pass1" class="form-control" DataValueField="password" required runat="server" ></asp:TextBox>
+                                        <label>Re-Enter Password</label>
                                         <asp:TextBox ID="pass" class="form-control" DataValueField="password" required runat="server" ></asp:TextBox>
                                     </div>
 
 
                                     <center>
-                                         <asp:Button ID="Button1" runat="server"  class=" mu-post-btn " OnClick="login"   Text="Login" >   </asp:Button>
+                                         <asp:Button ID="Button1" runat="server"  class=" mu-post-btn " OnClick="Save_Pass"   Text="Login" >   </asp:Button>
                                    </center>
                                     <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
                                     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
@@ -182,8 +184,7 @@
                                      <!-- Bootstrap -->
                                     <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
                                     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
-                                    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
-                                        media="screen" />
+                                    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' media="screen" />
                                     <!-- Bootstrap -->
                                     <!-- Modal Popup -->
                                     <div id="MyPopup" class="modal fade" role="dialog">

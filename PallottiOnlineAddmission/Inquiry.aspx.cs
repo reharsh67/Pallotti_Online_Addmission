@@ -73,8 +73,6 @@ namespace PallottiOnlineAddmission
                     cmd2.Parameters.AddWithValue("@r_email", EMAIL.Text);
                     cmd2.ExecuteNonQuery();
                     con.Close();
-                    
-
                     string myMsg = "Data save sucess ! Please note this Id for further references " + uid , myTitle = "Server Says";
                     ClientScript.RegisterStartupScript(this.GetType(), "Popup", "ShowPopup('" + myMsg + "', '" + myTitle + "');", true);
                     //ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Record Saved Sucessfully');window.location='Inquiry.aspx';", true);

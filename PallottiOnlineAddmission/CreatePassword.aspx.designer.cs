@@ -10,7 +10,16 @@
 namespace PallottiOnlineAddmission {
     
     
-    public partial class StudLogin {
+    public partial class CreatePassword {
+        
+        /// <summary>
+        /// uid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uid;
         
         /// <summary>
         /// EMAIL control.
@@ -20,6 +29,15 @@ namespace PallottiOnlineAddmission {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox EMAIL;
+        
+        /// <summary>
+        /// pass1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pass1;
         
         /// <summary>
         /// pass control.
