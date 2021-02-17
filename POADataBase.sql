@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2021 at 06:54 AM
+-- Generation Time: Feb 17, 2021 at 07:48 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -62,6 +62,7 @@ CREATE TABLE `tbl_student_family_details` (
 
 CREATE TABLE `tbl_student_personal_details` (
   `r_id` int(11) NOT NULL,
+  `r_uid` varchar(10) NOT NULL,
   `r_phno` varchar(20) DEFAULT NULL,
   `r_password` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `r_fullname` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
@@ -106,6 +107,7 @@ ALTER TABLE `tbl_student_family_details`
 --
 ALTER TABLE `tbl_student_personal_details`
   ADD PRIMARY KEY (`r_id`),
+  ADD UNIQUE KEY `r_uid` (`r_uid`),
   ADD UNIQUE KEY `r_phno` (`r_phno`),
   ADD UNIQUE KEY `r_password` (`r_password`);
 
