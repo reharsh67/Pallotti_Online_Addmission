@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2021 at 07:48 AM
+-- Generation Time: Feb 20, 2021 at 04:14 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_student_counselling` (
   `r_id` int(25) NOT NULL,
-  `r_email` varchar(40) NOT NULL,
+  `r_uid` varchar(10) NOT NULL,
   `r_year` varchar(25) NOT NULL,
   `r_date` varchar(25) NOT NULL,
   `r_slot` varchar(50) NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE `tbl_student_personal_details` (
   `r_id` int(11) NOT NULL,
   `r_uid` varchar(10) NOT NULL,
   `r_phno` varchar(20) DEFAULT NULL,
-  `r_password` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `r_password` varchar(40) CHARACTER SET utf8 DEFAULT NULL,
   `r_fullname` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `r_email` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `r_state` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE `tbl_student_personal_details` (
 
 CREATE TABLE `tbl_student_queries` (
   `r_id` int(10) NOT NULL,
-  `r_email` varchar(30) DEFAULT NULL,
+  `r_uid` varchar(10) NOT NULL,
   `r_query` varchar(150) DEFAULT NULL,
   `r_response` varchar(150) DEFAULT NULL,
   `r_time_posted` varchar(25) DEFAULT NULL,
@@ -108,8 +108,7 @@ ALTER TABLE `tbl_student_family_details`
 ALTER TABLE `tbl_student_personal_details`
   ADD PRIMARY KEY (`r_id`),
   ADD UNIQUE KEY `r_uid` (`r_uid`),
-  ADD UNIQUE KEY `r_phno` (`r_phno`),
-  ADD UNIQUE KEY `r_password` (`r_password`);
+  ADD UNIQUE KEY `r_phno` (`r_phno`);
 
 --
 -- Indexes for table `tbl_student_queries`
