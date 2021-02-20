@@ -16,20 +16,19 @@ namespace PallottiOnlineAddmission
         protected void Page_Load(object sender, EventArgs e)
         {
          
-            string Name = "";
-            if (Application["mailid"] != null)
+            
+            if (Session["uid"] == null)
             {
-                Name = Application["mailid"].ToString();
-
+                Response.Redirect("error.aspx");
             }
-            object obj;
+            String sid = Session["uid"].ToString();
             const string strcon = "server=localhost;database=onlineaddmission;user id=root";
-            String query = "select * from `tbl_student_queries` where r_email=@r_email ";
+            String query = "select * from `tbl_student_queries` where r_uid=@r_uid ";
             MySqlConnection con = new MySqlConnection(strcon);
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.CommandType = CommandType.Text;
 
-            cmd.Parameters.AddWithValue("@r_email", Name);
+            cmd.Parameters.AddWithValue("@r_uid", sid);
             cmd.Connection = con;
             try
             {
@@ -37,7 +36,6 @@ namespace PallottiOnlineAddmission
                 MySqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 DataTable dt = new DataTable();
                 dt.Load(dr);
-               
                 GridView2.DataSource = dt;
                 GridView2.DataBind();
                 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inquiry.aspx.cs" Inherits="PallottiOnlineAddmission._Inquiry" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BookSlot.aspx.cs" Inherits="PallottiOnlineAddmission.BookSlot" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,62 +25,13 @@
       }
       args.IsValid = false;
   }
-  function verifyAnswer() {
-
-      var mylist = document.getElementById("myAns");
-      var result = mylist.options[mylist.selectedIndex].text;
-      var myVal = document.getElementById('cvmodulelist');
-      if (result == 'No') {
-          $('#lblLast_Name').removeAttr('required');
-          document.getElementById("year_con_0").disabled = true;
-          document.getElementById("year_con_1").disabled = true;
-          document.getElementById("year_con_2").disabled = true;
-          document.getElementById("txtSelectDate").disabled = true;
-          document.getElementById("CheckBoxList1_0").disabled = true;
-          document.getElementById("CheckBoxList1_1").disabled = true;
-          document.getElementById("CheckBoxList1_2").disabled = true;
-          document.getElementById("CheckBoxList1_3").disabled = true;
-          document.getElementById("mode_list_0").disabled = true;
-          document.getElementById("mode_list_1").disabled = true;
-          ValidatorEnable(document.getElementById("cvmodulelist"), false);
-          ValidatorEnable(document.getElementById("RequiredFieldValidator1"), false);
-          ValidatorEnable(document.getElementById("RequiredFieldValidator2"), false);
-          ValidatorEnable(document.getElementById("RequiredFieldValidator3"), false);
-          ValidatorEnable(document.getElementById("CustomValidator1"), false);
-      } else {
-          document.getElementById("year_con_0").disabled = false;
-          document.getElementById("year_con_1").disabled = false;
-          document.getElementById("year_con_2").disabled = false;
-          document.getElementById("txtSelectDate").disabled = false;
-          document.getElementById("CheckBoxList1_0").disabled = false;
-          document.getElementById("CheckBoxList1_1").disabled = false;
-          document.getElementById("CheckBoxList1_2").disabled = false;
-          document.getElementById("CheckBoxList1_3").disabled = false;
-          document.getElementById("mode_list_0").disabled = false;
-          document.getElementById("mode_list_1").disabled = false;
-          ValidatorEnable(document.getElementById("cvmodulelist"), true);
-          ValidatorEnable(document.getElementById("RequiredFieldValidator1"), true);
-          ValidatorEnable(document.getElementById("RequiredFieldValidator2"), true);
-          ValidatorEnable(document.getElementById("RequiredFieldValidator3"), true);
-          ValidatorEnable(document.getElementById("CustomValidator1"), true);
-      }
-  }
-  window.onscroll = function () { myFunction() };
-
-  // Get the header
-  var header = document.getElementById("myHeader");
-
-  // Get the offset position of the navbar
-  var sticky = header.offsetTop;
-
-  // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-  function myFunction() {
-      if (window.pageYOffset > sticky) {
-          header.classList.add("sticky");
-      } else {
-          header.classList.remove("sticky");
-      }
-  }
+  
+    function ShowPopup(myMsg, myTitle) {
+        $("#MyPopup .modal-title").html(myTitle);
+        $("#MyPopup .modal-body").html(myMsg);
+        $("#MyPopup").modal("show");
+    }
+ 
 </script>
 
 <!-- Start header  -->
@@ -217,66 +168,21 @@
                     <div class="col-md-8 col-sm-8 col-xs-17 col-md-offset-2">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                Admission Inquiry 2021-22
+                                Post Query
                             </div>
                             <div class="panel-body">
                                 <form id="form2" runat="server" role="form" method="post">
                                     <div class="form-group ">
-                                        <label>Already Filled this form <a href="/StudLogin.aspx"><span class="required">Click here </span></a>Login and view Response!</label>
+                                        <label>Already Filled this form <a href="/ViewResp.aspx"><span class="required">Click here </span></a>to view Response!</label>
 
                                         <br />
 
                                         <br />
-                                        <label>Your Full Name <span class="required"><b>*</b></span></label>
-                                        <asp:TextBox ID="UserName" DataValueField="fname" class="form-control" runat="server" required ToolTip="Enter Your Name"></asp:TextBox>
-                                        <br />
-
-                                        <label>Mobile Number  <span class="required"><b>*</b></span></label>
-                                        <asp:TextBox ID="MobNo" DataValueField="Mno" class="form-control" runat="server" required ToolTip="Enter MobNo"></asp:TextBox>
-                                        <br />
-
-                                        <label>Email  <span class="required"><b>*</b></span></label>
+                                        
+                                        <label>Uid  <span class="required"><b>*</b></span></label>
                                         <asp:TextBox ID="EMAIL" class="form-control" DataValueField="EmailId" runat="server" required ToolTip="Enter Email"></asp:TextBox>
                                         <br />
-
-                                        <asp:Label ID="state" runat="server" Text="State "><b>State  </b><span class="required"> *</span></asp:Label>
-                                        <asp:TextBox ID="statebox" DataValueField="sname" class="form-control" runat="server" required ToolTip="Enter State name"></asp:TextBox>
-                                        <br />
-
-                                        <label>City <span class="required"><b>*</b></span></label>
-                                        <asp:TextBox ID="city" class="form-control" DataValueField="Cname" runat="server" required ToolTip="Enter City name"></asp:TextBox>
-                                        <br />
-
-                                        <label>I would like to study  <span class="required"><b>*</b></span></label>
-                                        <asp:DropDownList required="required" DataValueField="FieldName" class="form-control" ID="DropDownList2" runat="server">
-                                            <asp:ListItem Value=''>Please Select</asp:ListItem>
-                                            <asp:ListItem Value='UG-CE'>B.E.- Computer Engineering</asp:ListItem>
-                                            <asp:ListItem Value='UG-IT'>B.E.- Information Technology</asp:ListItem>
-                                            <asp:ListItem Value='UG-EE'>B.E.- Electrical Engineering</asp:ListItem>
-                                            <asp:ListItem Value='UG-ETC'>B.E.- Eectronics & Telecommunication Engineering</asp:ListItem>
-                                            <asp:ListItem Value='UG-ME'>B.E.- Mechnical Engineering</asp:ListItem>
-                                            <asp:ListItem Value='UG-CivE'>B.E.- Civil Engineering</asp:ListItem>
-                                            <asp:ListItem Value='PG-CSE'>M.Tech.- Computer Science Engineering</asp:ListItem>
-                                            <asp:ListItem Value='PG-CDCM'>M.Tech.- CAD-CAM </asp:ListItem>
-                                        </asp:DropDownList>
-                                        <br />
-
-                                        <label>Write Your Query </label>
-                                        <asp:TextBox ID="askQue" class="form-control" DataValueField="question" runat="server" ToolTip="Ask Query"></asp:TextBox>
-                                        <br />
-
-                                        <label>Do you want to book Counselling Session ? </label>
-                                        <br />
-
-                                        <asp:DropDownList DataValueField="FieldName" class="form-control" onchange="verifyAnswer()" ID="myAns" runat="server" onclick="ToggleValidator(this);" ClientIDMode="Static">
-                                            <asp:ListItem Value="0">Please Select</asp:ListItem>
-                                            <asp:ListItem Value="1">Yes</asp:ListItem>
-                                            <asp:ListItem Value="2">No</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:CustomValidator runat="server" ID="CustomValidator1" ClientValidationFunction="ValidateModuleList" Display="Dynamic" ErrorMessage="Please select Yes or  NO.<br/>" ForeColor="Red">
-                                        </asp:CustomValidator>
-                                        <br />
-
+                                       
                                         <label>Counseling Required for <span class="required"><b>*</b></span> </label>
                                         <br />
 
@@ -320,16 +226,13 @@
                                         <br />
                                     </div>
                                     <center>
-                                         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" class=" mu-post-btn form-control"   Text="Submit" >   </asp:Button>
+                                         <asp:Button ID="Button1" runat="server" onclick="book_slot" class=" mu-post-btn form-control"   Text="Submit" >   </asp:Button>
                                    </center>
-                                    <!-- Bootstrap -->
-                                    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+                                     <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
                                     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
-                                    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
-                                        media="screen" />
-                                    <!-- Bootstrap -->
-                                    <!-- Modal Popup -->
-                                    <div id="MyPopup" class="modal fade" role="dialog">
+                                    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' media="screen" />
+
+                                    <div id="MyPopup1" class="modal fade" role="dialog">
                                         <div class="modal-dialog">
                                             <!-- Modal content-->
                                             <div class="modal-content">
@@ -341,19 +244,12 @@
                                                 <div class="modal-body">
                                                 </div>
                                                 <div class="modal-footer">
-                                                  <button type="button" class="btn btn-danger" onclick="window.location.href='/Inquiry.aspx'" data-dismiss="modal">
+                                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/BookSlot.aspx'" data-dismiss="modal">
                                                         OK</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <script type="text/javascript">
-                                        function ShowPopup(myMsg,myTitle) {
-                                            $("#MyPopup .modal-title").html(myTitle);
-                                            $("#MyPopup .modal-body").html(myMsg);
-                                            $("#MyPopup").modal("show");
-                                        }
-                                    </script>
                                 </form>
                             </div>
                         </div>
@@ -362,8 +258,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Modal Popup -->
 
 
     <script src="assets/js/jquery.min.js"></script>

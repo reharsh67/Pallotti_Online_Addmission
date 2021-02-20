@@ -167,21 +167,16 @@
                                    <label>Enter Email</label>
                                         <asp:TextBox ID="EMAIL" class="form-control" DataValueField="question" required runat="server" ></asp:TextBox>
                                         <label>Enter Password</label>
-                                        <asp:TextBox ID="pass1" class="form-control" DataValueField="password" required runat="server" ></asp:TextBox>
+                                        <asp:TextBox ID="pass1" class="form-control" type="password" DataValueField="password" required runat="server" ></asp:TextBox>
                                         <label>Re-Enter Password</label>
-                                        <asp:TextBox ID="pass" class="form-control" DataValueField="password" required runat="server" ></asp:TextBox>
+                                        <asp:TextBox ID="pass" class="form-control" type="password" DataValueField="password" required runat="server" ></asp:TextBox>
                                     </div>
 
 
                                     <center>
-                                         <asp:Button ID="Button1" runat="server"  class=" mu-post-btn " OnClick="Save_Pass"   Text="Login" >   </asp:Button>
+                                         <asp:Button ID="Button1" runat="server"  class=" mu-post-btn " OnClick="Save_Pass"   Text="Create" >   </asp:Button>
                                    </center>
-                                    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
-                                    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
-                                    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'  media="screen" />
-                                    <!-- Bootstrap -->
-                                    <!-- Modal Popup -->
-                                     <!-- Bootstrap -->
+                                  
                                     <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
                                     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
                                     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' media="screen" />
@@ -199,7 +194,7 @@
                                                 <div class="modal-body">
                                                 </div>
                                                 <div class="modal-footer">
-                                                  <button type="button" class="btn btn-danger" onclick="window.location.href='#'" data-dismiss="modal">
+                                                  <button type="button" class="btn btn-danger" onclick="window.location.href='/StudLogin.aspx'" data-dismiss="modal">
                                                         OK</button>
                                                 </div>
                                             </div>

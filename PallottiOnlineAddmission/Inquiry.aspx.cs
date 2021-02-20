@@ -15,7 +15,7 @@ namespace PallottiOnlineAddmission
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
        
         protected void Button1_Click(object sender, EventArgs e)
@@ -23,8 +23,8 @@ namespace PallottiOnlineAddmission
             object obj;
             const string strcon = "server=localhost;database=onlineaddmission;user id=root";
             String query = "insert into `tbl_student_personal_details` (r_uid,r_phno,r_fullname,r_email,r_state,r_city)  values (@r_uid,@r_phno,@r_fullname,@r_email,@r_state,@r_city ) ";
-            String query1 = "select COUNT(*) from tbl_student_personal_details where r_email=@r_email or r_phno=@r_phno", query2 = "insert into tbl_student_queries (r_email,r_query,r_time_posted) values (@r_email,@r_query,@r_time_posted)";
-            String query3 = "insert into tbl_student_counselling (r_email,r_year,r_date,r_slot,r_mode) values (@r_email,@r_year,@r_date,@r_slot,@r_mode) ";
+            String query1 = "select COUNT(*) from tbl_student_personal_details where r_email=@r_email or r_phno=@r_phno", query2 = "insert into tbl_student_queries (r_uid,r_query,r_time_posted) values (@r_uid,@r_query,@r_time_posted)";
+            String query3 = "insert into tbl_student_counselling (r_uid,r_year,r_date,r_slot,r_mode) values (@r_uid,@r_year,@r_date,@r_slot,@r_mode) ";
             DateTimeOffset now = (DateTimeOffset)DateTime.UtcNow;
             MySqlConnection con = new MySqlConnection(strcon); 
             MySqlCommand cmd = new MySqlCommand(query1,con);
@@ -70,7 +70,7 @@ namespace PallottiOnlineAddmission
                     con.Open();
                     cmd2.Parameters.AddWithValue("@r_query", askQue.Text);
                     cmd2.Parameters.AddWithValue("@r_time_posted", now.ToString());
-                    cmd2.Parameters.AddWithValue("@r_email", EMAIL.Text);
+                    cmd2.Parameters.AddWithValue("@r_uid", uid);
                     cmd2.ExecuteNonQuery();
                     con.Close();
                     string myMsg = "Data save sucess ! Please note this Id for further references " + uid , myTitle = "Server Says";
@@ -93,7 +93,7 @@ namespace PallottiOnlineAddmission
                         cmd3.Connection = con;
                         con.Open();
                         cmd3.Parameters.AddWithValue("@r_year", year_con.SelectedItem.Value.ToString());
-                        cmd3.Parameters.AddWithValue("@r_email", EMAIL.Text);
+                        cmd3.Parameters.AddWithValue("@r_uid", uid);
                         cmd3.Parameters.AddWithValue("@r_slot", slot);
                         cmd3.Parameters.AddWithValue("@r_mode", mode_list.SelectedItem.Value.ToString());
                         cmd3.Parameters.AddWithValue("@r_date", txtSelectDate.Text);

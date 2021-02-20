@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -45,15 +46,12 @@ namespace PallottiOnlineAddmission
                         String query1 = "UPDATE `tbl_student_personal_details` SET `r_password`=@r_password WHERE `r_uid`=@r_uid";
                         MySqlCommand cmd1 = new MySqlCommand(query1, con);
                         cmd1.CommandType = CommandType.Text;
-                        cmd1.Parameters.AddWithValue("@r_password", pass.Text);
+                        cmd1.Parameters.AddWithValue("@r_password", CreateMD5(pass.Text.ToString()));
                         cmd1.Parameters.AddWithValue("@r_uid", uid.Text);
                         cmd1.Connection = con;
                         cmd1.ExecuteNonQuery();
                         string myMsg = "Password Set Sucessfully ", myTitle = "Server Says";
                         ClientScript.RegisterStartupScript(this.GetType(), "Popup", "ShowPopup('" + myMsg + "', '" + myTitle + "');", true);
-                        Session["UserId"] = EMAIL.Text;
-                        Session["Pwd"] = pass.Text;
-                        Response.Redirect("StudDash.aspx");
                     }
                     else
                     {
@@ -67,7 +65,7 @@ namespace PallottiOnlineAddmission
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
@@ -77,6 +75,23 @@ namespace PallottiOnlineAddmission
             }
 
         }
+        public static string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
 
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
         }
+
+    }
 }

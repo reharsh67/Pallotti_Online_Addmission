@@ -1,19 +1,26 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudLogin.aspx.cs" Inherits="PallottiOnlineAddmission.StudLogin" %>
 
 <!DOCTYPE html>
+
+<style>
+    .required {
+        color: red;
+    }
+
+    .profile-pic1 {
+        display: block;
+        margin: 0 auto;
+        margin-left: -15%;
+        margin-top: 10px;
+    }
+</style>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!--START SCROLL TOP BUTTON -->
 <a class="scrollToTop" href="#">
     <id class="fa fa-angle-up"></id>
 </a>
 <!-- END SCROLL TOP BUTTON -->
-<script type="text/javascript">
-    function ShowPopup(title, body) {
-        $("#MyPopup .modal-title").html(title);
-        $("#MyPopup .modal-body").html(body);
-        $("#MyPopup").modal("show");
-    }
-</script>
+
 
 <!-- Start header  -->
 <header id="mu-header">
@@ -66,14 +73,7 @@
                 </button>
                 <!-- LOGO -->
                 <!-- TEXT BASED LOGO -->
-                <style>
-                    .profile-pic1 {
-                        display: block;
-                        margin: 0 auto;
-                        margin-left: -15%;
-                        margin-top: 10px;
-                    }
-                </style>
+
                 <!-- IMG BASED LOGO  -->
                 <span></span>
                 <a class="profile-pic1" href="#">
@@ -133,11 +133,7 @@
 
 
 <body>
-    <style>
-        .required {
-            color: red;
-        }
-    </style>
+
     <br />
     <br />
 
@@ -163,30 +159,23 @@
                                         <br />
 
                                         <label>Enter U-Id Genrated while filling Inquriy Form</label>
-                                        <asp:TextBox ID="EMAIL" class="form-control" DataValueField="question" required runat="server" ></asp:TextBox>
+                                        <asp:TextBox ID="EMAIL" class="form-control" DataValueField="question" required runat="server"></asp:TextBox>
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <asp:TextBox ID="pass" class="form-control" DataValueField="password" required runat="server" ></asp:TextBox>
+                                        <asp:TextBox ID="pass" class="form-control" DataValueField="password" type="password" required runat="server"></asp:TextBox>
                                     </div>
 
 
                                     <center>
                                          <asp:Button ID="Button1" runat="server"  class=" mu-post-btn " OnClick="login"   Text="Login" >   </asp:Button>
                                    </center>
+
                                     <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
                                     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
-                                    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'  media="screen" />
-                                    <!-- Bootstrap -->
-                                    <!-- Modal Popup -->
-                                     <!-- Bootstrap -->
-                                    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
-                                    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
-                                    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
-                                        media="screen" />
-                                    <!-- Bootstrap -->
-                                    <!-- Modal Popup -->
-                                    <div id="MyPopup" class="modal fade" role="dialog">
+                                    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' media="screen" />
+
+                                    <div id="MyPopup1" class="modal fade" role="dialog">
                                         <div class="modal-dialog">
                                             <!-- Modal content-->
                                             <div class="modal-content">
@@ -198,44 +187,19 @@
                                                 <div class="modal-body">
                                                 </div>
                                                 <div class="modal-footer">
-                                                  <button type="button" class="btn btn-danger" onclick="window.location.href='#'" data-dismiss="modal">
+                                                    <button type="button" class="btn btn-danger" onclick="window.location.href='/StudLogin.aspx'" data-dismiss="modal">
                                                         OK</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <script type="text/javascript">
-                                        function ShowPopup(myMsg,myTitle) {
-                                            $("#MyPopup .modal-title").html(myTitle);
-                                            $("#MyPopup .modal-body").html(myMsg);
-                                            $("#MyPopup").modal("show");
-                                        }
-                                    </script>
-                                     <div id="MyPopup1" class="modal fade" role="dialog">
-                                        <div class="modal-dialog">
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">
-                                                        &times;</button>
-                                                    <h4 class="modal-title"></h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                </div>
-                                                <div class="modal-footer">
-                                                  <button type="button" class="btn btn-danger" onclick="window.location.href='/StudLogin.aspx'" data-dismiss="modal">
-                                                        OK</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <script type="text/javascript">
-                                        function ShowPopup1(myMsg,myTitle) {
-                                            $("#MyPopup1 .modal-title").html(myTitle);
-                                            $("#MyPopup1 .modal-body").html(myMsg);
-                                            $("#MyPopup1").modal("show");
-                                        }
-                                    </script>
+    function ShowPopup1(myMsg, myTitle) {
+        $("#MyPopup .modal-title").html(myTitle);
+        $("#MyPopup .modal-body").html(myMsg);
+        $("#MyPopup").modal("show");
+    }
+</script>
                                 </form>
                             </div>
                         </div>
@@ -265,17 +229,7 @@
     <!-- Custom js -->
     <script src="assets/js/custom.js"></script>
     <!-- Start footer -->
-    <style>
-        .footer {
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            height: 75px;
-            background: #222;
-            color: white;
-        }
-    </style>
+
     <footer id="mu-footer">
         <!-- start footer top -->
         <div class="mu-footer-top ">
@@ -359,7 +313,7 @@
         <div class="mu-footer-bottom ">
             <div class="container">
                 <div class="mu-footer-bottom-area">
-                    <p>&copy; All Right Reserved. Designed by CE Department</a></p>
+                    <p>&copy; All Right Reserved. Designed by CE Department</p>
                 </div>
             </div>
         </div>

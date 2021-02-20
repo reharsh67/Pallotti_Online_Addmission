@@ -1,13 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewResp.aspx.cs" Inherits="PallottiOnlineAddmission.ViewResp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudDash.aspx.cs" Inherits="PallottiOnlineAddmission.StudDash" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!--START SCROLL TOP BUTTON -->
 <a class="scrollToTop" href="#">
-    <i class="fa fa-angle-up"></i>
+    <id class="fa fa-angle-up"></id>
 </a>
 <!-- END SCROLL TOP BUTTON -->
-
+<script type="text/javascript">
+    function ShowPopup(title, body) {
+        $("#MyPopup .modal-title").html(title);
+        $("#MyPopup .modal-body").html(body);
+        $("#MyPopup").modal("show");
+    }
+</script>
 
 <!-- Start header  -->
 <header id="mu-header">
@@ -142,43 +148,39 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-8 col-sm-8 col-xs-19 col-md-offset-2">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                         <div class="panel panel-info">
                             <div class="panel-heading">
-                                Enter Email-Id to view Previous Interactions!
+                                Student Login
                             </div>
                             <div class="panel-body">
-                                <br />
-                                <form id="form2" runat="server" role="form" method="post">
-                                    <div class="form-group ">
-                                        <label>Want to post a new Query or book a counselling session  <a href="/AskQueAgain"><span class="required">Click here </span></a>To fil the form</label>
+                                <form role="form" runat="server" method="post">
 
+                                    <div class="form-group">
+
+                                        <label>Write a Query.</label> <asp:Button ID="AsQueAgain" runat="server" OnClick="Create_session" class=" mu-post-btn form-control"   Text="Click Here" >   </asp:Button>
+                                        <br />
                                         <br />
 
-                                        <br />
-
-                                        <label>Email  <span class="required"><b>*</b></span></label>
-                                        <asp:TextBox ID="EMAIL" class="form-control" DataValueField="EmailId" runat="server" required ToolTip="Enter Email"></asp:TextBox>
-                                        <br />
-
-
-
-                                        <center>
-                                         <asp:Button ID="Button1" runat="server"  class=" mu-post-btn form-control" OnClick="btnsend_Click"  Text="Submit" >   </asp:Button>
-                                   </center>
+                                        <label>Book counselling </label><asp:Button ID="Button1" runat="server"  OnClick="Create_session1" class=" mu-post-btn form-control"   Text="Click Here" >   </asp:Button>
+                                        
+                                        <label>Reset password </label><asp:Button ID="Button2" runat="server" OnClick="Create_session2" class=" mu-post-btn form-control"   Text="Click Here" >   </asp:Button>
+                                        
                                     </div>
+
+
+                                   
+                                   
                                 </form>
-                                <br />
-                                <br />
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
+
 
     <br />
     <br />
@@ -289,7 +291,7 @@
         </div>
         <!-- start footer bottom -->
 
-        <div class="mu-footer-bottom footer">
+        <div class="mu-footer-bottom ">
             <div class="container">
                 <div class="mu-footer-bottom-area">
                     <p>&copy; All Right Reserved. Designed by CE Department</a></p>

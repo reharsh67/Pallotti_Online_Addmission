@@ -173,12 +173,14 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="AskQueAgain.aspx" />
+    <Content Include="BookSlot.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="CreatePassword.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="Inquiry.aspx">
       <BrowseToURL>~/Inquiry.aspx</BrowseToURL>
     </Content>
@@ -221,8 +223,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="StudDash.aspx" />
     <Content Include="StudLogin.aspx" />
-    <Content Include="ViewResp.aspx" />
     <Content Include="ViewRespDeails.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -362,6 +364,13 @@
     <Compile Include="AskQueAgain.aspx.designer.cs">
       <DependentUpon>AskQueAgain.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookSlot.aspx.cs">
+      <DependentUpon>BookSlot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookSlot.aspx.designer.cs">
+      <DependentUpon>BookSlot.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -382,6 +391,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inquiry.aspx.cs">
       <DependentUpon>Inquiry.aspx</DependentUpon>
@@ -410,19 +426,19 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="StudDash.aspx.cs">
+      <DependentUpon>StudDash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudDash.aspx.designer.cs">
+      <DependentUpon>StudDash.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StudLogin.aspx.cs">
       <DependentUpon>StudLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudLogin.aspx.designer.cs">
       <DependentUpon>StudLogin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ViewResp.aspx.cs">
-      <DependentUpon>ViewResp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewResp.aspx.designer.cs">
-      <DependentUpon>ViewResp.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewRespDeails.aspx.cs">
       <DependentUpon>ViewRespDeails.aspx</DependentUpon>
@@ -457,7 +473,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50334</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50334/</IISUrl>
+          <IISUrl>http://localhost:50000/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:50000/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
