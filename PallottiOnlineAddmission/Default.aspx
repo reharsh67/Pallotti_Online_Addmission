@@ -93,12 +93,12 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="fa fa-angle-down"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Student</a></li>
+                                    <li><a href="/StudLogin.aspx">Student</a></li>
                                     <li><a href="#">Clerk</a></li>
                                     <li><a href="#">Admin</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Contact</a></li>
+                            
 
 
                         </ul>

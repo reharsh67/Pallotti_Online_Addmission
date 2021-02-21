@@ -96,7 +96,9 @@
                             <li><a href="#">Admin</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Contact</a></li>
+                     <li class="right-div">
+                <center><a href="/StudLogin.aspx" class="btn btn-danger pull-right ">LOGOUT</a></center>
+            </li>
 
 
                 </ul>
